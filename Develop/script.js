@@ -1,6 +1,9 @@
 // Assignment code here
 
-function genPass() {
+function generatePassword() {
+
+    var char = "";
+    var genPass = "";
 
     //Length prompts
     var minLength = window.prompt("Please enter the minimum length:");
@@ -8,57 +11,44 @@ function genPass() {
     var maxLength = window.prompt("Please enter the maximum length:");
     maxLength = parseInt(maxLength);
 
+    var passwordLength = Math.floor(Math.random() * (maxLength - minLength + 1) + minLength);
+
+
     //Character Value Prompts
 
     var lowCase = window.prompt("Include lower case characters? Enter 1 for yes");
     lowCase = parseInt(lowCase);
     if (lowCase = 1) {
-        //include lowercase in password generator
-        //return true
-    }
-    else {
-        return false;
+        char += "abcdefghijklmnopqrstuvwxyz";
     }
 
 
     var upCase = window.prompt("Include upper case characters? Enter 1 for yes");
     upCase = parseInt(upCase);
     if (upCase = 1) {
-        //include lowercase in password generator
-        //return true
-    }
-    else {
-        return false;
+        char += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
 
 
     var numeric = window.prompt("Include numeric characters? Enter 1 for yes");
     numeric = parseInt(numeric);
     if (numeric = 1) {
-        //include lowercase in password generator
-        //return true
+        char += "0123456789";
     }
-    else {
-        return false;
-    }
-
+   
 
     var special = window.prompt("Include special characters? Enter 1 for yes");
     special = parseInt(special);
-    if (parseInt(special) = 1) {
-        //include lowercase in password generator
-        //return true
-    }
-    else {
-        return false;
+    if (special = 1) {
+        char += "~`!#$%^&*+=-[]\\\';,/{}|\":<>?"
     }
 
+    for (var i = 0; i < passwordLength; i++) {
+        var randomNumber = Math.floor(Math.random() * char.length);
+        genPass += char.substring(randomNumber, randomNumber + 1);
+    }
+    return genPass;
 };
-
-
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
