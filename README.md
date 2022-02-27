@@ -23,5 +23,5 @@ This week's challenge consists of refractoring some javascript by creating a fun
 
 Live URL: https://e-lexis.github.io/Password-Generator/
 
-<img src="capture.png" alt="Site capture" />
+![Site capture](site.png)
 
