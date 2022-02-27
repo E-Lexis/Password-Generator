@@ -21,6 +21,5 @@ THEN a password is generated that matches the selected criteriaWHEN the password
 
 Live URL: https://e-lexis.github.io/Password-Generator/
 
-<img src="site.png"
-     alt="Site capture" />
+![Site capture](/site.png)
 
